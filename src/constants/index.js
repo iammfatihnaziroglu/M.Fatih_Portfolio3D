@@ -90,8 +90,20 @@ import {
       icon: reactjs,
     },
     {
+      name: "Redux Toolkit",
+      icon: redux,
+    },
+    {
       name: "Tailwind CSS",
       icon: tailwind,
+    },
+    {
+      name: "Node JS",
+      icon: nodejs,
+    },
+    {
+      name: "MongoDB",
+      icon: mongodb,
     },
     {
       name: "Three JS",
