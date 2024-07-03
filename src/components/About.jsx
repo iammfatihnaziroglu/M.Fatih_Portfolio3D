@@ -43,7 +43,7 @@ const About = () => {
     variants={fadeIn("", "", 0.1, 1)}
     className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
     >
-     Hi stranger, I'm Mehmet Fatih Nazıroğlu. I am ambitious, I love learning new things, achieving something and constantly improving. Maybe a software developer, maybe more than that.
+     Hi stranger, I'm Mehmet Fatih Nazıroğlu. I am ambitious, I love learning new things, achieving something and constantly improving. Sometimes a software developer, sometimes more than that.
     </motion.p>
 
     <div className='mt-10 flex items-center justify-center flex-wrap gap-5'>

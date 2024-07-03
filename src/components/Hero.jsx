@@ -2,8 +2,30 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+import { useEffect, useState } from "react";
+
 
 const Hero = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 500px)');
+
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  }, []);
+
+
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
@@ -23,15 +45,23 @@ const Hero = () => {
             <br className="sm:block hidden" /> user interfaces and immersive 3D
             visuals, <br className="sm:block hidden" /> just like the one you're
             experiencing now.
+           
+            {isMobile ? ( 
+              <div className="w-full flex">
+              <motion.p className="mt-1 mr-0 text-secondary text-[13px] max-w-3xl leading-[30px]">
+                *Touch the computer and lets the roll!
+              </motion.p>
+            </div>
+             ) : (
             <div className="w-full flex">
               <motion.p className="mt-3 mr-0 text-secondary text-[15px] max-w-3xl leading-[30px]">
                 *If you want to take a closer look at the codes, press enter and start rotating the scroll part of the mouse :) To cancel, press enter again and the mouse scroll will scroll up and down the page again.
               </motion.p>
             </div>
+          )}
           </p>
         </div>
       </div>
-
       <ComputersCanvas />
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
