@@ -51,20 +51,29 @@ import {
   
   const services = [
     {
-      title: "Frontend Developer",
+      title: "React",
+      description: "Javascript/Typescript Library ",
       icon: web,
     },
     {
-      title: "Javascript Developer",
-      icon: mobile,
+      title: "Vue",
+      description: "Javascript/Typescript Library ",
+      icon: web,
     },
     {
-      title: "React.js Developer",
+      title: "Next",
+      description: "Javascript/Typescript Library ",
+      icon: web,
+    },
+    {
+      title: "Javascript",
+      description: "Programming Language ",
       icon: backend,
     },
     {
-      title: "Three.js Developer",
-      icon: creator,
+      title: "Typescript",
+      description: "Programming Language ",
+      icon: backend,
     },
   ];
   

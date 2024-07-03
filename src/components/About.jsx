@@ -7,9 +7,9 @@ import { services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc';
 
-const ServicesCard = ({ index, title, icon}) => {
+const ServicesCard = ({ index, title, icon, description}) => {
   return (
-    <Tilt className='xs:w-[250px] w-full'>
+    <Tilt className='xs:w-[200px] w-full'>
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         className='w-full primary-gradient p-[1px] rounded-[20px] shadow-card'
@@ -24,6 +24,7 @@ const ServicesCard = ({ index, title, icon}) => {
           >
             <img src={icon} alt={title} className='w-16 h-16 object-contain' />
             <h3 className='text-white text-[20px] font-bold text-center' >{title}</h3>
+            <h3 className='text-white text-[14px] font-normal text-center' >{description}</h3>
           </div>
       </motion.div>
     </Tilt>
@@ -45,7 +46,7 @@ const About = () => {
      Hi stranger, I'm Mehmet Fatih Nazıroğlu. I am ambitious, I love learning new things, achieving something and constantly improving. Maybe a software developer, maybe more than that.
     </motion.p>
 
-    <div className='mt-20 flex flex-wrap gap-10'>
+    <div className='mt-10 flex items-center justify-center flex-wrap gap-5'>
       {services.map((services, index) => (
         <ServicesCard key={services.title} index={index} {...services} />
       ))}
